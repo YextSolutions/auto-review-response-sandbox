@@ -1,6 +1,6 @@
 import { ReviewWebhook } from './ReviewWebhook.ts'
 
-declare const BASE_URI = 'https://api.yext.com/v2/accounts/me/reviews/'
+declare const BASE_URI = 'https://sbx-api.yextapis.com/v2/accounts/me/reviews/'
 const RESPONSE = "${{response}}";
 //const RESPONSE = "Thanks for your review - Automated Response";
 const API_KEY = "${{reviewsApiKey}}";
@@ -44,7 +44,7 @@ export async function reviewAutoRespond(webhook: any) {
 
 export async function respondViaApi(review_id: number, review_response: any) {
     try {
-        let requestUri = 'https://api.yext.com/v2/accounts/me/reviews/' + review_id.toString() + '/comments?v=20221220&api_key=' + API_KEY;
+        let requestUri = 'https://sbx-api.yextapis.com/v2/accounts/me/reviews/' + review_id.toString() + '/comments?v=20230401&api_key=' + API_KEY;
 
         const response = await fetch(requestUri, {
             method: 'POST',
