@@ -36,7 +36,7 @@ export async function reviewAutoRespond(webhook: any) {
           // Exit if review has content and user doesn't want to respond to reviews with content
                 console.log("Attempting to post...");
                 // Wait 10s to avoid race condition
-                await delay(5000);
+                await delay(10000);
                 // Post response via API
                 await respondViaApi(webhook_payload.review.id, reviewResponse);
             }
